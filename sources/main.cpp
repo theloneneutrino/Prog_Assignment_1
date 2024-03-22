@@ -1,16 +1,18 @@
 #include "../headers/main.h"
 
-int main(int argc, char * argv[])
+int main()
 {
 	// prompt user for input
-	vector<int> fringe = {3, 5, 9, 7, 2};
+	vector<int> fringe;
+
+	putData(fringe);
 	
 	// call mystery algorithm with arguments gathered: MysteryAlgorithm(inputs);
-	MysteryAlgorithm(fringe, stoi(argv[1]));
+	
+	MysteryAlgorithm(fringe,ReadInteger("What is my purpose? "));
 	
 	// display data
 	displayData(fringe);
-	cout << "done" << endl;
 	
-	return(0);
+	return 0;
 }
