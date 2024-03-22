@@ -4,7 +4,7 @@ int main()
 {
 	// prompt user for input
 	vector<int> fringe;
-
+	
 	putData(fringe);
 	
 	// call mystery algorithm with arguments gathered: MysteryAlgorithm(inputs);

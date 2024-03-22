@@ -28,8 +28,15 @@ int ReadInteger(char * question)
 	int result = 0;
 	char c = 0;
 	int v = 0;
-	
+	bool neg = false;
+
 	printf("%s", question);
+	c = getchar(); 
+	if( c == '-') // if negative number
+		neg = true; // sets neg flag
+	else if (('0' <= c ) && (c <= '9'))  // else sets result to first number
+		result = c - '0';
+
 	c = getchar();
 	while(('0' <= c ) && (c <= '9'))
 	{
@@ -38,7 +45,15 @@ int ReadInteger(char * question)
 		c = getchar();
 	}
 
-	return result;
+	if (!neg)
+	{
+		return result;
+	}
+	else
+	{
+		result *= -1;
+		return result;
+	}
 }
 
 void putData(vector<int> &vec)
