@@ -22,7 +22,7 @@ void MysteryAlgorithm(vector<int> &inputs, int p)
 	}
 }
 
-int ReadInteger(char * question)
+int ReadInteger(const char * question)
 {
 	//reads from istream until input is not integer
 	int result = 0;
@@ -56,12 +56,32 @@ int ReadInteger(char * question)
 	}
 }
 
+int ReadUnsignedInteger(const char * question)
+{
+	//reads from istream until input is not integer
+	int result = 0;
+	char c = 0;
+	int v = 0;
+
+	printf("%s", question);
+	c = getchar(); 
+	
+	while(('0' <= c ) && (c <= '9'))
+	{
+		v = c - '0';
+		result = 10 * result + v;
+		c = getchar();
+	}
+
+	return result;
+}
+
 void putData(vector<int> &vec)
 {
 	int tmpVal;
-	int size = 0;
+	long unsigned int size = 0;
 	do {
-		size = ReadInteger("Size of vector: ");
+		size = ReadUnsignedInteger("Size of vector: ");
 	} while (size <= 0);
 
 	for (int i = 0; i < size; i++)
